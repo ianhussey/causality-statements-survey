@@ -1,0 +1,333 @@
+```{r}
+# title: process data
+# author: Ian Hussey (ian.hussey@ugent.be)
+# license: GPLv3+
+
+
+# dependencies ------------------------------------------------------------
+
+
+library(schoRsch)
+library(tidyverse)
+library(MBESS)
+
+
+# get data ----------------------------------------------------------------
+
+
+# read in the data files
+a_df <- 
+  read.csv("../data/raw data/group_a.csv") %>%
+  mutate(group = "a", 
+         id = paste(id, group, sep = ""),
+         # was run in two batches where each participant got 50% of the statements, so add empty columns for missing items in each batch
+         statements..129. = NA, statements..130. = NA, statements..131. = NA, statements..132. = NA,
+         statements..133. = NA, statements..134. = NA, statements..135. = NA, statements..136. = NA,
+         statements..137. = NA, statements..138. = NA, statements..139. = NA, statements..140. = NA,
+         statements..141. = NA, statements..142. = NA, statements..143. = NA, statements..144. = NA,
+         statements..145. = NA, statements..146. = NA, statements..147. = NA, statements..148. = NA,
+         statements..149. = NA, statements..150. = NA, statements..151. = NA, statements..152. = NA,
+         statements..153. = NA, statements..154. = NA, statements..155. = NA, statements..156. = NA,
+         statements..157. = NA, statements..158. = NA, statements..159. = NA, statements..160. = NA,
+         statements..161. = NA, statements..162. = NA, statements..163. = NA, statements..164. = NA,
+         statements..165. = NA, statements..166. = NA, statements..167. = NA, statements..168. = NA,
+         statements..169. = NA, statements..170. = NA, statements..171. = NA, statements..172. = NA,
+         statements..173. = NA, statements..174. = NA, statements..175. = NA, statements..176. = NA,
+         statements..177. = NA, statements..178. = NA, statements..179. = NA, statements..180. = NA,
+         statements..181. = NA, statements..182. = NA, statements..183. = NA, statements..184. = NA,
+         statements..185. = NA, statements..186. = NA, statements..187. = NA, statements..188. = NA,
+         statements..189. = NA, statements..190. = NA, statements..191. = NA, statements..192. = NA,
+         statements..193. = NA, statements..194. = NA, statements..195. = NA, statements..196. = NA,
+         statements..197. = NA, statements..198. = NA, statements..199. = NA, statements..200. = NA,
+         statements..201. = NA, statements..202. = NA, statements..203. = NA, statements..204. = NA,
+         statements..205. = NA, statements..206. = NA, statements..207. = NA, statements..208. = NA,
+         statements..209. = NA, statements..210. = NA, statements..211. = NA, statements..212. = NA,
+         statements..213. = NA, statements..214. = NA, statements..215. = NA, statements..216. = NA,
+         statements..217. = NA, statements..218. = NA, statements..219. = NA, statements..220. = NA,
+         statements..221. = NA, statements..222. = NA, statements..223. = NA, statements..224. = NA,
+         statements..225. = NA, statements..226. = NA, statements..227. = NA, statements..228. = NA,
+         statements..229. = NA, statements..230. = NA, statements..231. = NA, statements..232. = NA,
+         statements..233. = NA, statements..234. = NA, statements..235. = NA, statements..236. = NA,
+         statements..237. = NA, statements..238. = NA, statements..239. = NA, statements..240. = NA,
+         statements..241. = NA, statements..242. = NA, statements..243. = NA, statements..244. = NA,
+         statements..245. = NA, statements..246. = NA, statements..247. = NA, statements..248. = NA,
+         statements..249. = NA, statements..250. = NA, statements..251. = NA, statements..252. = NA,
+         statements..253. = NA, statements..254. = NA, statements..255. = NA, statements..256. = NA) %>%
+  rename(completion_time = groupTime621) %>%
+  select(-interviewtime,
+         -groupTime641,
+         -consentTime,
+         -groupTime631,
+         -prolificIDTime,
+         -ageTime,
+         -genderTime,
+         -statementsTime,
+         -Last.page,
+         -Start.language,
+         -Date.started,
+         -Date.last.action,
+         -Referring.URL,
+         -consent,
+         -gender...comment)
+
+b_df <- 
+  read.csv("../data/raw data/group_b.csv") %>%
+  mutate(group = "b", 
+         id = paste(id, group, sep = ""),
+         statements..1. = NA, 
+         statements..2. = NA, statements..3. = NA, statements..4. = NA, statements..5. = NA, 
+         statements..6. = NA, statements..7. = NA, statements..8. = NA, statements..9. = NA,
+         statements..10. = NA, statements..11. = NA, statements..12. = NA, statements..13. = NA,
+         statements..14. = NA, statements..15. = NA, statements..16. = NA, statements..17. = NA,
+         statements..18. = NA, statements..19. = NA, statements..20. = NA, statements..21. = NA,
+         statements..22. = NA, statements..23. = NA, statements..24. = NA, statements..25. = NA,
+         statements..26. = NA, statements..27. = NA, statements..28. = NA, statements..29. = NA,
+         statements..30. = NA, statements..31. = NA, statements..32. = NA, statements..33. = NA,
+         statements..34. = NA, statements..35. = NA, statements..36. = NA, statements..37. = NA,
+         statements..38. = NA, statements..39. = NA, statements..40. = NA, statements..41. = NA,
+         statements..42. = NA, statements..43. = NA, statements..44. = NA, statements..45. = NA,
+         statements..46. = NA, statements..47. = NA, statements..48. = NA, statements..49. = NA,
+         statements..50. = NA, statements..51. = NA, statements..52. = NA, statements..53. = NA,
+         statements..54. = NA, statements..55. = NA, statements..56. = NA, statements..57. = NA,
+         statements..58. = NA, statements..59. = NA, statements..60. = NA, statements..61. = NA,
+         statements..62. = NA, statements..63. = NA, statements..64. = NA, statements..65. = NA,
+         statements..66. = NA, statements..67. = NA, statements..68. = NA, statements..69. = NA,
+         statements..70. = NA, statements..71. = NA, statements..72. = NA, statements..73. = NA,
+         statements..74. = NA, statements..75. = NA, statements..76. = NA, statements..77. = NA,
+         statements..78. = NA, statements..79. = NA, statements..80. = NA, statements..81. = NA,
+         statements..82. = NA, statements..83. = NA, statements..84. = NA, statements..85. = NA,
+         statements..86. = NA, statements..87. = NA, statements..88. = NA, statements..89. = NA,
+         statements..90. = NA, statements..91. = NA, statements..92. = NA, statements..93. = NA,
+         statements..94. = NA, statements..95. = NA, statements..96. = NA, statements..97. = NA,
+         statements..98. = NA, statements..99. = NA, statements..100. = NA, statements..101. = NA,
+         statements..102. = NA, statements..103. = NA, statements..104. = NA, statements..105. = NA,
+         statements..106. = NA, statements..107. = NA, statements..108. = NA, statements..109. = NA,
+         statements..110. = NA, statements..111. = NA, statements..112. = NA, statements..113. = NA,
+         statements..114. = NA, statements..115. = NA, statements..116. = NA, statements..117. = NA,
+         statements..118. = NA, statements..119. = NA, statements..120. = NA, statements..121. = NA,
+         statements..122. = NA, statements..123. = NA, statements..124. = NA, statements..125. = NA,
+         statements..126. = NA, statements..127. = NA, statements..128. = NA) %>%
+  rename(completion_time = groupTime661)%>%
+  select(-interviewtime,
+         -groupTime681,
+         -consentTime,
+         -groupTime671,
+         -prolificIDTime,
+         -ageTime,
+         -genderTime,
+         -statementsTime,
+         -Last.page,
+         -Start.language,
+         -Date.started,
+         -Date.last.action,
+         -Referring.URL,
+         -consent,
+         -gender...comment)
+
+combined_df <- 
+  rbind(a_df, b_df) %>%  # merge the two batches
+  mutate(complete_data = ifelse(nchar(as.character(Completed)) > 10, TRUE, FALSE)) %>%
+  filter(complete_data == TRUE) %>%
+  # rename for clarity and ease
+  rename(statement_1 = statements..1., statement_2 = statements..2.,
+         statement_3 = statements..3., statement_4 = statements..4.,
+         statement_5 = statements..5., statement_6 = statements..6.,
+         statement_7 = statements..7., statement_8 = statements..8.,
+         statement_9 = statements..9., statement_10 = statements..10.,
+         statement_11 = statements..11., statement_12 = statements..12.,
+         statement_13 = statements..13., statement_14 = statements..14.,
+         statement_15 = statements..15., statement_16 = statements..16.,
+         statement_17 = statements..17., statement_18 = statements..18.,
+         statement_19 = statements..19., statement_20 = statements..20.,
+         statement_21 = statements..21., statement_22 = statements..22.,
+         statement_23 = statements..23., statement_24 = statements..24.,
+         statement_25 = statements..25., statement_26 = statements..26.,
+         statement_27 = statements..27., statement_28 = statements..28.,
+         statement_29 = statements..29., statement_30 = statements..30.,
+         statement_31 = statements..31., statement_32 = statements..32.,
+         statement_33 = statements..33., statement_34 = statements..34.,
+         statement_35 = statements..35., statement_36 = statements..36.,
+         statement_37 = statements..37., statement_38 = statements..38.,
+         statement_39 = statements..39., statement_40 = statements..40.,
+         statement_41 = statements..41., statement_42 = statements..42.,
+         statement_43 = statements..43., statement_44 = statements..44.,
+         statement_45 = statements..45., statement_46 = statements..46.,
+         statement_47 = statements..47., statement_48 = statements..48.,
+         statement_49 = statements..49., statement_50 = statements..50.,
+         statement_51 = statements..51., statement_52 = statements..52.,
+         statement_53 = statements..53., statement_54 = statements..54.,
+         statement_55 = statements..55., statement_56 = statements..56.,
+         statement_57 = statements..57., statement_58 = statements..58.,
+         statement_59 = statements..59., statement_60 = statements..60.,
+         statement_61 = statements..61., statement_62 = statements..62.,
+         statement_63 = statements..63., statement_64 = statements..64.,
+         statement_65 = statements..65., statement_66 = statements..66.,
+         statement_67 = statements..67., statement_68 = statements..68.,
+         statement_69 = statements..69., statement_70 = statements..70.,
+         statement_71 = statements..71., statement_72 = statements..72.,
+         statement_73 = statements..73., statement_74 = statements..74.,
+         statement_75 = statements..75., statement_76 = statements..76.,
+         statement_77 = statements..77., statement_78 = statements..78.,
+         statement_79 = statements..79., statement_80 = statements..80.,
+         statement_81 = statements..81., statement_82 = statements..82.,
+         statement_83 = statements..83., statement_84 = statements..84.,
+         statement_85 = statements..85., statement_86 = statements..86.,
+         statement_87 = statements..87., statement_88 = statements..88.,
+         statement_89 = statements..89., statement_90 = statements..90.,
+         statement_91 = statements..91., statement_92 = statements..92.,
+         statement_93 = statements..93., statement_94 = statements..94.,
+         statement_95 = statements..95., statement_96 = statements..96.,
+         statement_97 = statements..97., statement_98 = statements..98.,
+         statement_99 = statements..99., statement_100 = statements..100.,
+         statement_101 = statements..101., statement_102 = statements..102.,
+         statement_103 = statements..103., statement_104 = statements..104.,
+         statement_105 = statements..105., statement_106 = statements..106.,
+         statement_107 = statements..107., statement_108 = statements..108.,
+         statement_109 = statements..109., statement_110 = statements..110.,
+         statement_111 = statements..111., statement_112 = statements..112.,
+         statement_113 = statements..113., statement_114 = statements..114.,
+         statement_115 = statements..115., statement_116 = statements..116.,
+         statement_117 = statements..117., statement_118 = statements..118.,
+         statement_119 = statements..119., statement_120 = statements..120.,
+         statement_121 = statements..121., statement_122 = statements..122.,
+         statement_123 = statements..123., statement_124 = statements..124.,
+         statement_125 = statements..125., statement_126 = statements..126.,
+         statement_127 = statements..127., statement_128 = statements..128.,
+         statement_129 = statements..129., statement_130 = statements..130.,
+         statement_131 = statements..131., statement_132 = statements..132.,
+         statement_133 = statements..133., statement_134 = statements..134.,
+         statement_135 = statements..135., statement_136 = statements..136.,
+         statement_137 = statements..137., statement_138 = statements..138.,
+         statement_139 = statements..139., statement_140 = statements..140.,
+         statement_141 = statements..141., statement_142 = statements..142.,
+         statement_143 = statements..143., statement_144 = statements..144.,
+         statement_145 = statements..145., statement_146 = statements..146.,
+         statement_147 = statements..147., statement_148 = statements..148.,
+         statement_149 = statements..149., statement_150 = statements..150.,
+         statement_151 = statements..151., statement_152 = statements..152.,
+         statement_153 = statements..153., statement_154 = statements..154.,
+         statement_155 = statements..155., statement_156 = statements..156.,
+         statement_157 = statements..157., statement_158 = statements..158.,
+         statement_159 = statements..159., statement_160 = statements..160.,
+         statement_161 = statements..161., statement_162 = statements..162.,
+         statement_163 = statements..163., statement_164 = statements..164.,
+         statement_165 = statements..165., statement_166 = statements..166.,
+         statement_167 = statements..167., statement_168 = statements..168.,
+         statement_169 = statements..169., statement_170 = statements..170.,
+         statement_171 = statements..171., statement_172 = statements..172.,
+         statement_173 = statements..173., statement_174 = statements..174.,
+         statement_175 = statements..175., statement_176 = statements..176.,
+         statement_177 = statements..177., statement_178 = statements..178.,
+         statement_179 = statements..179., statement_180 = statements..180.,
+         statement_181 = statements..181., statement_182 = statements..182.,
+         statement_183 = statements..183., statement_184 = statements..184.,
+         statement_185 = statements..185., statement_186 = statements..186.,
+         statement_187 = statements..187., statement_188 = statements..188.,
+         statement_189 = statements..189., statement_190 = statements..190.,
+         statement_191 = statements..191., statement_192 = statements..192.,
+         statement_193 = statements..193., statement_194 = statements..194.,
+         statement_195 = statements..195., statement_196 = statements..196.,
+         statement_197 = statements..197., statement_198 = statements..198.,
+         statement_199 = statements..199., statement_200 = statements..200.,
+         statement_201 = statements..201., statement_202 = statements..202.,
+         statement_203 = statements..203., statement_204 = statements..204.,
+         statement_205 = statements..205., statement_206 = statements..206.,
+         statement_207 = statements..207., statement_208 = statements..208.,
+         statement_209 = statements..209., statement_210 = statements..210.,
+         statement_211 = statements..211., statement_212 = statements..212.,
+         statement_213 = statements..213., statement_214 = statements..214.,
+         statement_215 = statements..215., statement_216 = statements..216.,
+         statement_217 = statements..217., statement_218 = statements..218.,
+         statement_219 = statements..219., statement_220 = statements..220.,
+         statement_221 = statements..221., statement_222 = statements..222.,
+         statement_223 = statements..223., statement_224 = statements..224.,
+         statement_225 = statements..225., statement_226 = statements..226.,
+         statement_227 = statements..227., statement_228 = statements..228.,
+         statement_229 = statements..229., statement_230 = statements..230.,
+         statement_231 = statements..231., statement_232 = statements..232.,
+         statement_233 = statements..233., statement_234 = statements..234.,
+         statement_235 = statements..235., statement_236 = statements..236.,
+         statement_237 = statements..237., statement_238 = statements..238.,
+         statement_239 = statements..239., statement_240 = statements..240.,
+         statement_241 = statements..241., statement_242 = statements..242.,
+         statement_243 = statements..243., statement_244 = statements..244.,
+         statement_245 = statements..245., statement_246 = statements..246.,
+         statement_247 = statements..247., statement_248 = statements..248.,
+         statement_249 = statements..249., statement_250 = statements..250.,
+         statement_251 = statements..251., statement_252 = statements..252.,
+         statement_253 = statements..253., statement_254 = statements..254.,
+         statement_255 = statements..255., statement_256 = statements..256.,
+         catch_1 = statements..c1., 
+         catch_2 = statements..c2., 
+         catch_3 = statements..c3., 
+         catch_4 = statements..c4.)
+
+
+# assess exclusions -------------------------------------------------------
+
+
+# exclude participants based on rt outliers and catch trials
+exclusions_df <-
+  combined_df %>%
+  select(id, 
+         Completed,
+         catch_1,
+         catch_2,
+         catch_3,
+         catch_4,
+         completion_time) %>%
+  rowwise() %>%
+  mutate(exclude_catch = ifelse(catch_1 != 4 | catch_2 != 4 | catch_3 != 2 | catch_4 != 2,  # if incorrect answers were given on any trial then exclude participant
+                                TRUE, FALSE)) %>%
+  outlier(dv = "completion_time",  # if rt for all ratings is ±2.5 SD from mean then exclude
+          todo = "nothing", 
+          res.name = "exclude_rt_outlier",
+          upper.z = 2.5, 
+          lower.z = -2.5) %>%
+  mutate(exclude_rt_outlier = as.logical(exclude_rt_outlier),
+         exclude = ifelse(exclude_catch == TRUE | exclude_rt_outlier == TRUE, 
+                          TRUE, FALSE)) %>%
+  ungroup()
+
+plot(density(exclusions_df$completion_time, na.rm = TRUE), col = "black")
+lines(density(exclusions_df$completion_time[exclusions_df$exclude == FALSE], na.rm = TRUE), col = "red")
+
+
+# payment or rejection on prolific ----------------------------------------
+
+
+all_participants_df <- 
+  combined_df %>%
+  select(id, prolificID)
+
+
+participants_with_complete_data_df <- 
+  exclusions_df %>%
+  filter(exclude == FALSE) %>%
+  left_join(all_participants_df, by =  "id") %>%
+  select(id, prolificID)
+
+write.csv(participants_with_complete_data_df, "../data/screened data/participants_to_be_paid.csv", row.names = FALSE)
+
+
+participants_to_be_rejected_df <- 
+  exclusions_df %>%
+  filter(exclude == TRUE) %>%
+  left_join(all_participants_df, by =  "id") %>%
+  select(id, prolificID)
+
+write.csv(participants_to_be_rejected_df, "../data/screened data/participants_to_be_rejected.csv", row.names = FALSE)
+
+
+# conduct exclusions ------------------------------------------------------
+
+
+# sample for analysis
+screened_df <- 
+  participants_with_complete_data_df %>%
+  select(id) %>%
+  left_join(combined_df, by = "id") %>%
+  select(-prolificID)  # drop prolific ID for privacy
+
+screened_df %>% write.csv("../data/screened data/screened data.csv", row.names = FALSE)
+```

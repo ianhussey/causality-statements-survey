@@ -1,0 +1,508 @@
+```{r}
+# title: process data
+# author: Ian Hussey (ian.hussey@ugent.be)
+# license: GPLv3+
+# notes: 99% CI throughout given multiple comparisons
+
+
+# dependencies ------------------------------------------------------------
+
+
+library(schoRsch)
+library(tidyverse)
+library(MBESS)
+library(stringr)
+
+
+# get data ----------------------------------------------------------------
+
+
+# read in the data files
+setwd("../data/")
+
+# read in the screened data
+screened_df <- read.csv("../data/screened data/screened data.csv")
+
+# read in the trial types file
+trial_types_df <- read.csv("../measures/statements and trial types.csv")
+
+
+# demographics ------------------------------------------------------------
+
+
+demographics_df <- 
+  screened_df %>%
+  select(id,
+         age,
+         gender) %>%
+  mutate(gender = tolower(gender),  # homogenise gender categories. first make lower case
+         gender = ifelse(gender == "f", "female",  # then convert abbreviations
+                         ifelse(gender == "m", "male",
+                                ifelse(gender == "nb", "non-binary", gender))))
+
+# save demographics to disk
+sink("processed data/sample demographics.txt")
+cat("gender\n")
+demographics_df %>% count(gender)
+cat("\n\nmean age\n")
+demographics_df$age %>% mean() %>% round(., 1)
+cat("\nsd age\n")
+demographics_df$age %>% sd() %>% round(., 1)
+cat("\nn in group a\n")
+screened_df %>% filter(group == "a") %>% summarize(n = n())  # check n per condition and run more until balanced and sample size achieved after exclusions
+cat("\nn in group b\n")
+screened_df %>% filter(group == "b") %>% summarize(n = n())
+sink()
+
+
+# reshape and tidy data ---------------------------------------------------
+
+
+statements_df <- 
+  screened_df %>%
+  select(-Completed,  # remove all non statement columns
+         -age,
+         -gender,
+         -catch_1,
+         -catch_2,
+         -catch_3,
+         -catch_4,
+         -completion_time, 
+         -group,
+         -complete_data) 
+
+# reshape data from wide to long
+statements_reshaped_df <- 
+  statements_df %>%
+  gather(statement_ID, rating, c(statement_1, statement_2, statement_3, statement_4, statement_5, statement_6, 
+                                 statement_7, statement_8, statement_9, statement_10, statement_11, statement_12, 
+                                 statement_13, statement_14, statement_15, statement_16, statement_17, statement_18, 
+                                 statement_19, statement_20, statement_21, statement_22, statement_23, statement_24, 
+                                 statement_25, statement_26, statement_27, statement_28, statement_29, statement_30, 
+                                 statement_31, statement_32, statement_33, statement_34, statement_35, statement_36, 
+                                 statement_37, statement_38, statement_39, statement_40, statement_41, statement_42, 
+                                 statement_43, statement_44, statement_45, statement_46, statement_47, statement_48, 
+                                 statement_49, statement_50, statement_51, statement_52, statement_53, statement_54, 
+                                 statement_55, statement_56, statement_57, statement_58, statement_59, statement_60, 
+                                 statement_61, statement_62, statement_63, statement_64, statement_65, statement_66, 
+                                 statement_67, statement_68, statement_69, statement_70, statement_71, statement_72, 
+                                 statement_73, statement_74, statement_75, statement_76, statement_77, statement_78, 
+                                 statement_79, statement_80, statement_81, statement_82, statement_83, statement_84, 
+                                 statement_85, statement_86, statement_87, statement_88, statement_89, statement_90, 
+                                 statement_91, statement_92, statement_93, statement_94, statement_95, statement_96, 
+                                 statement_97, statement_98, statement_99, statement_100, statement_101, statement_102, 
+                                 statement_103, statement_104, statement_105, statement_106, statement_107, statement_108, 
+                                 statement_109, statement_110, statement_111, statement_112, statement_113, statement_114, 
+                                 statement_115, statement_116, statement_117, statement_118, statement_119, statement_120, 
+                                 statement_121, statement_122, statement_123, statement_124, statement_125, statement_126, 
+                                 statement_127, statement_128, statement_129, statement_130, statement_131, statement_132, 
+                                 statement_133, statement_134, statement_135, statement_136, statement_137, statement_138, 
+                                 statement_139, statement_140, statement_141, statement_142, statement_143, statement_144, 
+                                 statement_145, statement_146, statement_147, statement_148, statement_149, statement_150, 
+                                 statement_151, statement_152, statement_153, statement_154, statement_155, statement_156, 
+                                 statement_157, statement_158, statement_159, statement_160, statement_161, statement_162, 
+                                 statement_163, statement_164, statement_165, statement_166, statement_167, statement_168, 
+                                 statement_169, statement_170, statement_171, statement_172, statement_173, statement_174, 
+                                 statement_175, statement_176, statement_177, statement_178, statement_179, statement_180, 
+                                 statement_181, statement_182, statement_183, statement_184, statement_185, statement_186, 
+                                 statement_187, statement_188, statement_189, statement_190, statement_191, statement_192, 
+                                 statement_193, statement_194, statement_195, statement_196, statement_197, statement_198, 
+                                 statement_199, statement_200, statement_201, statement_202, statement_203, statement_204, 
+                                 statement_205, statement_206, statement_207, statement_208, statement_209, statement_210, 
+                                 statement_211, statement_212, statement_213, statement_214, statement_215, statement_216, 
+                                 statement_217, statement_218, statement_219, statement_220, statement_221, statement_222, 
+                                 statement_223, statement_224, statement_225, statement_226, statement_227, statement_228, 
+                                 statement_229, statement_230, statement_231, statement_232, statement_233, statement_234, 
+                                 statement_235, statement_236, statement_237, statement_238, statement_239, statement_240, 
+                                 statement_241, statement_242, statement_243, statement_244, statement_245, statement_246, 
+                                 statement_247, statement_248, statement_249, statement_250, statement_251, statement_252, 
+                                 statement_253, statement_254, statement_255, statement_256)) 
+
+
+# reshape and calculate parameters (mean, sd, n) --------------------------
+
+
+# summarize ratings across participants
+summarized_ratings_df <-
+  statements_reshaped_df %>%
+  group_by(statement_ID) %>%  # group across participants
+  summarize(rating_mean = round(mean(rating, na.rm = TRUE), 3),  # find means and SDs
+            rating_sd = round(sd(rating, na.rm = TRUE), 3),
+            n = n()/2) %>%  # dirty correction for NAs, given n() doesn't take arguments such as `na.rm = TRUE``
+  ungroup()
+
+# join the summarized ratings to the trial type df for further parsing
+full_df <- left_join(summarized_ratings_df, trial_types_df, by = "statement_ID")
+
+# reshape means
+temp_1_df <- 
+  full_df %>%
+  select(rating_mean, stimulus_x, stimulus_y, trial_type, n) %>%  # necessary columns only
+  spread(trial_type, rating_mean) %>%  # reshape to wide format
+  rename(x_causes_y_mean = x_causes_y,
+         x_prevents_y_mean = x_prevents_y,
+         y_causes_x_mean = y_causes_x,
+         y_prevents_x_mean = y_prevents_x) %>%
+  rownames_to_column()
+
+# reshape SDs
+temp_2_df <- 
+  full_df %>%
+  select(rating_sd, stimulus_x, stimulus_y, trial_type) %>%  # necessary columns only
+  spread(trial_type, rating_sd) %>%
+  rename(x_causes_y_sd = x_causes_y,
+         x_prevents_y_sd = x_prevents_y,
+         y_causes_x_sd = y_causes_x,
+         y_prevents_x_sd = y_prevents_x) %>%
+  rownames_to_column() %>%
+  select(-stimulus_x, -stimulus_y)
+
+# join
+ratings_means_sds_df <- 
+  left_join(temp_1_df, temp_2_df, by = "rowname") %>% 
+  select(-rowname)
+
+# write to disk
+ratings_means_sds_df %>% write.csv("../data/processed data/means and SDs.csv", row.names = FALSE)
+
+
+# assess combined directionality and reversibility ------------------------
+
+
+# effect sizes are Cohen's ds, with a given statement of interest as "treatment" and the pooled other three statements as "control". 
+# these are then ranked for the (exclusive) largest effect size.
+rev_and_dir_es_df <-
+  ratings_means_sds_df %>%
+  rowwise() %>%
+  mutate(not_x_causes_y_mean   = mean(c(x_prevents_y_sd, y_causes_x_sd, y_prevents_x_sd)),  # mean of control statements
+         not_x_prevents_y_mean = mean(c(x_causes_y_sd, y_causes_x_sd, y_prevents_x_sd)),
+         not_y_causes_x_mean   = mean(c(x_prevents_y_sd, x_causes_y_sd, y_prevents_x_sd)),
+         not_y_prevents_x_mean = mean(c(x_prevents_y_sd, y_causes_x_sd, x_causes_y_sd)),
+         
+         not_x_causes_y_sd   = sqrt( ( x_prevents_y_sd*(n-1) + y_causes_x_sd*(n-1) + y_prevents_x_sd*(n-1) ) / (n*3 - 3) ),  # combed sd of control statements
+         not_x_prevents_y_sd = sqrt( ( x_causes_y_sd*(n-1)   + y_causes_x_sd*(n-1) + y_prevents_x_sd*(n-1) ) / (n*3 - 3) ),
+         not_y_causes_x_sd   = sqrt( ( x_prevents_y_sd*(n-1) + x_causes_y_sd*(n-1) + y_prevents_x_sd*(n-1) ) / (n*3 - 3) ),
+         not_y_prevents_x_sd = sqrt( ( x_prevents_y_sd*(n-1) + y_causes_x_sd*(n-1) + x_causes_y_sd*(n-1)   ) / (n*3 - 3) ),
+         
+         # effect size between statement and pooled other three statements
+         x_causes_y_es    = round((x_causes_y_mean   - not_x_causes_y_mean)   / sqrt( ( x_causes_y_sd*(n-1)   + not_x_causes_y_sd*(n*3-1)   ) / (n-1 + n*3-1) ), 2),  # coehn's d es
+         x_prevents_y_es  = round((x_prevents_y_mean - not_x_prevents_y_mean) / sqrt( ( x_prevents_y_sd*(n-1) + not_x_prevents_y_sd*(n*3-1) ) / (n-1 + n*3-1) ), 2),
+         y_causes_x_es    = round((y_causes_x_mean   - not_y_causes_x_mean)   / sqrt( ( y_causes_x_sd*(n-1)   + not_y_causes_x_sd*(n*3-1)   ) / (n-1 + n*3-1) ), 2),
+         y_prevents_x_es  = round((y_prevents_x_mean - not_y_prevents_x_mean) / sqrt( ( y_prevents_x_sd*(n-1) + not_y_prevents_x_sd*(n*3-1) ) / (n-1 + n*3-1) ), 2),
+         
+         # the highest value of these differences scores represents the highest irreversibility and unidirectionality
+         highest_es = max(x_causes_y_es,  
+                          x_prevents_y_es,
+                          y_causes_x_es,
+                          y_prevents_x_es),
+         
+         # this finds the difference between the largest effect size and the sum of the other three. 
+         # this is mathemathically equivalent to the largest difference between a given es and the sum of the other three.
+         # it therefore selects the statement formulation with the highest irreversibility and unidirectionality,
+         # and quantifies its uniqueness relative to the other three formulations.
+         diff_es = round(highest_es - (sum(x_causes_y_es, x_prevents_y_es, y_causes_x_es, y_prevents_x_es) - highest_es), 2),  # find the difference between the highest and the sum of the other three
+         diff_es_ci_lower = round(ci.smd(conf.level=.99, smd = diff_es, n.1 = n*1, n.2 = n*3)[[1]], 2),  # 99% CI on the highest es (hence the choice of Ns). CIs therefore allow for the assessment of differences between the highest and the sum of the other three, where the sum of the other three defines the zero point.
+         diff_es_ci_upper = round(ci.smd(conf.level=.99, smd = diff_es, n.1 = n*1, n.2 = n*3)[[3]], 2),
+         
+         # reconstruct statements
+         statement = ifelse(x_causes_y_es == highest_es,  # compare against each formulation
+                            ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",  # check if the first word ends in s (is plural), 
+                                   paste(stimulus_x, "cause", stimulus_y),  # in which case use singular of relation rather than plural
+                                   paste(stimulus_x, "causes", stimulus_y)),  # otherwise use plural.
+                            ifelse(x_prevents_y_es == highest_es, 
+                                   ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",
+                                          paste(stimulus_x, "prevent", stimulus_y),
+                                          paste(stimulus_x, "prevents", stimulus_y)),
+                                   ifelse(y_causes_x_es == highest_es, 
+                                          ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss",
+                                                 paste(stimulus_y, "cause", stimulus_x),
+                                                 paste(stimulus_y, "causes", stimulus_x)),
+                                          ifelse(y_prevents_x_es == highest_es,
+                                                 ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss",
+                                                        paste(stimulus_y, "prevent", stimulus_x),
+                                                        paste(stimulus_y, "prevents", stimulus_x)), NA)))),
+         relation = ifelse(grepl("cause", statement), 
+                           "cause",
+                           "prevent")) %>%
+  ungroup() %>%
+  arrange(-highest_es) %>%
+  select(stimulus_x,
+         stimulus_y,
+         x_causes_y_es,
+         x_prevents_y_es,
+         y_causes_x_es,
+         y_prevents_x_es,
+         statement,
+         relation,
+         diff_es,
+         diff_es_ci_lower,
+         diff_es_ci_upper)
+
+# cause statements
+rev_dir_cause_statements_df <- 
+  rev_and_dir_es_df %>%
+  filter(relation == "cause") %>%
+  arrange(-diff_es)
+
+# prevent statements
+rev_dir_prevent_statements_df <- 
+  rev_and_dir_es_df %>%
+  filter(relation == "prevent") %>%
+  arrange(-diff_es)
+
+rev_dir_statements_df <- 
+  rbind(rev_dir_cause_statements_df, rev_dir_prevent_statements_df) %>%
+  select(statement,
+         relation,
+         diff_es,
+         diff_es_ci_lower,
+         diff_es_ci_upper)
+
+rev_dir_statements_df %>% write.csv("../data/processed data/irreversibility and unidirectionality - highest difference per stimulus group.csv", row.names = FALSE)
+
+
+# reversibility and directionality in long format -------------------------
+
+
+# first get n ratings per statement, required for below. 
+# this is a bit hacky: should be identical for all given that full data was a requirement 
+# and an equal number of particiants were in each group, each of which did half the statments.
+# so it's n/2 for the CURRENT dataset, but not generically.
+n_int <- screened_df %>% nrow()/2 %>% as.numeric()
+
+rev_dir_es_long_format_df <-
+  rev_and_dir_es_df %>%
+  select(stimulus_x,
+         stimulus_y,
+         x_causes_y_es,
+         x_prevents_y_es,
+         y_causes_x_es,
+         y_prevents_x_es) %>%
+  mutate(stimulus_pair = paste(stimulus_x, stimulus_y)) %>%
+  select(-stimulus_x, -stimulus_y) %>%
+  gather(trial_type, es, c(x_causes_y_es,  # reshape data
+                           x_prevents_y_es,
+                           y_causes_x_es,
+                           y_prevents_x_es)) %>%
+  rowwise() %>%
+  mutate(es_ci_lower = round(ci.smd(conf.level=.99, smd = es, n.1 = n_int, n.2 = n_int*3)[[1]], 2),  # 99% CI on es. N1 uses N ratings, N2 uses ratings of other three statements, so N*3.
+         es_ci_upper = round(ci.smd(conf.level=.99, smd = es, n.1 = n_int, n.2 = n_int*3)[[3]], 2)) %>%
+  separate(stimulus_pair, c("stimulus_x", "stimulus_y"), sep = " ", remove = FALSE) %>%
+  # recombine the statments 
+  mutate(statement = ifelse(trial_type == "x_causes_y_es",  # compare against each formulation
+                            ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",  # check if the first word ends in s (is plural), 
+                                   paste(stimulus_x, "cause", stimulus_y),  # in which case use singular of relation rather than plural
+                                   paste(stimulus_x, "causes", stimulus_y)),  # otherwise use plural.
+                            ifelse(trial_type == "x_prevents_y_es", 
+                                   ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",
+                                          paste(stimulus_x, "prevent", stimulus_y),
+                                          paste(stimulus_x, "prevents", stimulus_y)),
+                                   ifelse(trial_type == "y_causes_x_es",
+                                          ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss",
+                                                 paste(stimulus_y, "cause", stimulus_x),
+                                                 paste(stimulus_y, "causes", stimulus_x)),
+                                          ifelse(trial_type == "y_prevents_x_es", 
+                                                 ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss", 
+                                                        paste(stimulus_y, "prevent", stimulus_x),
+                                                        paste(stimulus_y, "prevents", stimulus_x)), 
+                                                 NA))))) %>%
+  select(stimulus_pair, statement, es, es_ci_lower, es_ci_upper) %>%
+  ungroup()
+
+# cause statements
+rev_dir_long_cause_statements_df <- 
+  rev_dir_es_long_format_df %>%
+  filter(grepl("cause", statement)) %>%
+  mutate(relation = "cause") %>%
+  arrange(-es)
+
+# prevent statements
+rev_dir_long_prevent_statements_df <- 
+  rev_dir_es_long_format_df %>%
+  filter(grepl("prevent", statement)) %>%
+  mutate(relation = "prevent") %>%
+  arrange(-es)
+
+rev_dir_long_statements_df <- 
+  rbind(rev_dir_long_cause_statements_df, rev_dir_long_prevent_statements_df) %>%
+  select(stimulus_pair, statement, relation, es, es_ci_lower, es_ci_upper)
+
+rev_dir_long_statements_df %>% write.csv("../data/processed data/irreversibility and unidirectionality.csv", row.names = FALSE)
+
+
+# assess reversibility ----------------------------------------------------
+
+
+rev_effect_sizes_df <-
+  ratings_means_sds_df %>%
+  rowwise() %>% 
+  mutate(
+    # effect size between statement and opposite relation statement (e.g., x causes y vs. x prevents y)
+    x_y_es_rev = round((x_causes_y_mean - x_prevents_y_mean) / sqrt( ( x_causes_y_sd*(n-1) + x_prevents_y_sd*(n-1) ) / (n*2-2) ), 2),  # cohen's d es
+    i = round(ci.smd(conf.level=.99, smd = x_y_es_rev, n.1 = n, n.2 = n)[[1]], 2),  # 99% CI on es
+    j = round(ci.smd(conf.level=.99, smd = x_y_es_rev, n.1 = n, n.2 = n)[[3]], 2),
+    # reconstruct statements
+    x_y_es_rev_statement = ifelse(x_y_es_rev > 0, 
+                                  ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                         paste(stimulus_x, "cause", stimulus_y),  # in which case use singular of relation rather than plural
+                                         paste(stimulus_x, "causes", stimulus_y)),
+                                  ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                         paste(stimulus_x, "prevent", stimulus_y),  # in which case use singular of relation rather than plural
+                                         paste(stimulus_x, "prevents", stimulus_y))),
+    i = ifelse(x_y_es_rev > 0, i, i*-1),  # order the lower and upper CIs properly
+    j = ifelse(x_y_es_rev > 0, j, j*-1),
+    x_y_es_rev_ci_lower = ifelse(i < j, i, j),  
+    x_y_es_rev_ci_upper = ifelse(i < j, j, i),
+    x_y_es_rev = ifelse(x_y_es_rev > 0, x_y_es_rev, x_y_es_rev*-1),  # invert negative values so that cause and prevent effects are directly compared in their magnitude. i don't use abs() here as CIs might not be positive.
+    
+    y_x_es_rev = round((y_causes_x_mean - y_prevents_x_mean) / sqrt( ( y_causes_x_sd*(n-1) + y_prevents_x_sd*(n-1) ) / (n*2-2) ), 2),  # cohen's d es
+    i = round(ci.smd(conf.level=.99, smd = y_x_es_rev, n.1 = n, n.2 = n)[[1]], 2),
+    j = round(ci.smd(conf.level=.99, smd = y_x_es_rev, n.1 = n, n.2 = n)[[3]], 2),
+    # reconstruct statements
+    y_x_es_rev_statement = ifelse(y_x_es_rev > 0, 
+                                  ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                         paste(stimulus_y, "cause", stimulus_x),  # in which case use singular of relation rather than plural
+                                         paste(stimulus_y, "causes", stimulus_x)),
+                                  ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                         paste(stimulus_y, "prevent", stimulus_x),  # in which case use singular of relation rather than plural
+                                         paste(stimulus_y, "prevents", stimulus_x))),
+    i = ifelse(y_x_es_rev > 0, i, i*-1),  # order the lower and upper CIs properly
+    j = ifelse(y_x_es_rev > 0, j, j*-1),
+    y_x_es_rev_ci_lower = ifelse(i < j, i, j),
+    y_x_es_rev_ci_upper = ifelse(i < j, j, i),
+    y_x_es_rev = ifelse(y_x_es_rev > 0, y_x_es_rev, y_x_es_rev*-1))  # invert negative values so that cause and prevent effects are directly compared in their magnitude. i don't use abs() here as CIs might not be positive.
+
+# reshape data
+rev_x_y_df <-
+  rev_effect_sizes_df %>%
+  select(x_y_es_rev_statement,
+         x_y_es_rev,
+         x_y_es_rev_ci_lower,
+         x_y_es_rev_ci_upper) %>%
+  rename(statement = x_y_es_rev_statement,
+         es = x_y_es_rev,
+         es_ci_lower = x_y_es_rev_ci_lower,
+         es_ci_upper = x_y_es_rev_ci_upper)
+
+rev_y_x_df <-
+  rev_effect_sizes_df %>%
+  select(y_x_es_rev_statement,
+         y_x_es_rev,
+         y_x_es_rev_ci_lower,
+         y_x_es_rev_ci_upper) %>%
+  rename(statement = y_x_es_rev_statement,
+         es = y_x_es_rev,
+         es_ci_lower = y_x_es_rev_ci_lower,
+         es_ci_upper = y_x_es_rev_ci_upper)
+
+rev_combined_df <- rbind(rev_x_y_df, rev_y_x_df)
+
+# cause statements
+rev_cause_statements_df <- 
+  rev_combined_df %>%
+  filter(grepl("cause", statement)) %>%
+  mutate(relation = "cause") %>%
+  arrange(-es)
+
+# prevent statements
+rev_prevent_statements_df <- 
+  rev_combined_df %>%
+  filter(grepl("prevent", statement)) %>%
+  mutate(relation = "prevent") %>%
+  arrange(-es)
+
+rev_statements_df <- 
+  rbind(rev_cause_statements_df, rev_prevent_statements_df) %>%
+  select(statement, relation, es, es_ci_lower, es_ci_upper)
+
+rev_statements_df %>% write.csv("../data/processed data/irreversibility.csv", row.names = FALSE)
+
+
+
+# assess directionality ---------------------------------------------------
+
+
+dir_effect_sizes_df <-
+  ratings_means_sds_df %>%
+  rowwise() %>% 
+  mutate(
+    # effect size between statement and opposite direction statement (e.g., x causes y vs. y causes x)
+    causes_es_dir = round((x_causes_y_mean - y_causes_x_mean) / sqrt( ( x_causes_y_sd*(n-1) + y_causes_x_sd*(n-1) ) / (n*2-2) ), 2),  # cohen's d es
+    i = round(ci.smd(conf.level=.99, smd = causes_es_dir, n.1 = n, n.2 = n)[[1]], 2),  # 99% CI of es
+    j = round(ci.smd(conf.level=.99, smd = causes_es_dir, n.1 = n, n.2 = n)[[3]], 2),
+    # reconstruct statements
+    causes_es_dir_statement = ifelse(causes_es_dir > 0, 
+                                     ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                            paste(stimulus_x, "cause", stimulus_y),  # in which case use singular of relation rather than plural
+                                            paste(stimulus_x, "causes", stimulus_y)),
+                                     ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                            paste(stimulus_y, "prevent", stimulus_x),  # in which case use singular of relation rather than plural
+                                            paste(stimulus_y, "prevents", stimulus_x))),
+    i = ifelse(causes_es_dir > 0, i, i*-1),  # order the lower and upper CIs properly
+    j = ifelse(causes_es_dir > 0, j, j*-1),
+    causes_es_dir_ci_lower = ifelse(i < j, i, j),  
+    causes_es_dir_ci_upper = ifelse(i < j, j, i),
+    causes_es_dir = ifelse(causes_es_dir > 0, causes_es_dir, causes_es_dir*-1),  # if the es is < 0 then invert, to bring in line with the statement whose direction has been inverted
+    
+    prevents_es_dir    = round((x_prevents_y_mean - y_prevents_x_mean)   / sqrt( ( x_prevents_y_sd*(n-1) + y_prevents_x_sd*(n-1)   ) / (n*2 - 2) ), 2), 
+    i = round(ci.smd(conf.level=.99, smd = prevents_es_dir, n.1 = n, n.2 = n)[[1]], 2),
+    j = round(ci.smd(conf.level=.99, smd = prevents_es_dir, n.1 = n, n.2 = n)[[3]], 2),
+    prevents_es_dir_statement = ifelse(prevents_es_dir > 0, 
+                                       ifelse(endsWith(as.character(stimulus_x), "s") & str_sub(as.character(stimulus_x), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                              paste(stimulus_x, "cause", stimulus_y),  # in which case use singular of relation rather than plural
+                                              paste(stimulus_x, "causes", stimulus_y)),
+                                       ifelse(endsWith(as.character(stimulus_y), "s") & str_sub(as.character(stimulus_y), start=-2) != "ss",  # check if the first word ends in s (is plural),
+                                              paste(stimulus_y, "prevent", stimulus_x),  # in which case use singular of relation rather than plural
+                                              paste(stimulus_y, "prevents", stimulus_x))),
+    i = ifelse(prevents_es_dir > 0, i, i*-1),
+    j = ifelse(prevents_es_dir > 0, j, j*-1),
+    prevents_es_dir_ci_lower = ifelse(i < j, i, j),  # order the lower and upper CIs properly
+    prevents_es_dir_ci_upper = ifelse(i < j, j, i),
+    prevents_es_dir = ifelse(prevents_es_dir > 0, prevents_es_dir, prevents_es_dir*-1)) %>%  # if the es is < 0 then invert, to bring in line with the statement whose direction has been inverted
+  ungroup() %>%
+  select(stimulus_x,  # reorder columns and drop unnecessary ones
+         stimulus_y,
+         causes_es_dir_statement,
+         causes_es_dir,
+         causes_es_dir_ci_lower,
+         causes_es_dir_ci_upper,
+         prevents_es_dir_statement,
+         prevents_es_dir,
+         prevents_es_dir_ci_lower,
+         prevents_es_dir_ci_upper)
+
+# cause statements
+dir_cause_statements_df <- 
+  dir_effect_sizes_df %>%
+  mutate(relation = "cause") %>%
+  select(causes_es_dir_statement,
+         relation,
+         causes_es_dir,
+         causes_es_dir_ci_lower,
+         causes_es_dir_ci_upper) %>%
+  rename(statement = causes_es_dir_statement,
+         es = causes_es_dir,
+         es_ci_lower = causes_es_dir_ci_lower,
+         es_ci_upper = causes_es_dir_ci_upper) %>%
+  arrange(-es)
+
+# prevent statements
+dir_prevent_statements_df <- 
+  dir_effect_sizes_df %>%
+  mutate(relation = "prevent") %>%
+  select(prevents_es_dir_statement,
+         relation,
+         prevents_es_dir,
+         prevents_es_dir_ci_lower,
+         prevents_es_dir_ci_upper) %>%
+  rename(statement = prevents_es_dir_statement,
+         es = prevents_es_dir,
+         es_ci_lower = prevents_es_dir_ci_lower,
+         es_ci_upper = prevents_es_dir_ci_upper) %>%
+  arrange(-es)
+
+dir_statements_df <- 
+  rbind(dir_cause_statements_df, dir_prevent_statements_df)
+
+dir_statements_df %>% write.csv("../data/processed data/unidirectionality.csv", row.names = FALSE)
+```

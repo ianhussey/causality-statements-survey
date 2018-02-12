@@ -1,0 +1,22 @@
+gender
+# A tibble: 3 × 2
+      gender     n
+       <chr> <int>
+1     female    45
+2       male    56
+3 non-binary     1
+
+
+mean age
+[1] 34.3
+
+sd age
+[1] 10.9
+
+n in group a
+   n
+1 51
+
+n in group b
+   n
+1 51

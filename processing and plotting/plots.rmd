@@ -1,0 +1,314 @@
+```{r}
+# title: plot ranked effect sizes with 99% CIs
+# author: Ian Hussey (ian.hussey@ugent.be)
+# license: GPLv3+
+# notes: 99% CI throughout
+
+
+# dependencies ------------------------------------------------------------
+
+
+library(tidyverse)
+library(gridExtra)  # for multiplots
+library(cowplot)  # for multiplots
+
+
+# get data ----------------------------------------------------------------
+
+
+# read in the trial types file
+statement_es_all_df <- read.csv("../measures/statements and trial types.csv") 
+
+# read in processed data files
+rev_dir_statements_df      <- read.csv("../data/processed data/irreversibility and unidirectionality.csv")
+rev_dir_diff_statements_df <- read.csv("../data/processed data/irreversibility and unidirectionality - highest difference per stimulus group.csv")
+rev_statements_df          <- read.csv("../data/processed data/irreversibility.csv")
+dir_statements_df          <- read.csv("../data/processed data/unidirectionality.csv")
+
+
+
+# colors ------------------------------------------------------------------
+
+
+my_colors <- c("#009933", "#cc0000")  # colors green, red
+
+
+# irreversibility and unidirectionality ----------------------------------------
+
+
+# assign colors
+rev_dir_statements_df <- 
+  rev_dir_statements_df %>%
+  rowwise %>%
+  mutate(sig_test = as.factor(ifelse(es_ci_lower > 0, "significant", "nonsignificant")))
+
+names(my_colors) <- levels(rev_dir_statements_df$sig_test)
+my_scale_color <- scale_colour_manual(name = "sig_test", values = my_colors)
+
+# cause statements
+rev_dir_cause <- 
+  rev_dir_statements_df %>%
+  filter(relation == "cause") %>%
+  transform(statement = reorder(statement, es))  # sort by es
+
+rev_dir_cause_plot <- 
+  ggplot(rev_dir_cause, 
+         aes(x = statement, y = es)) +
+  theme_minimal() +
+  xlab("Cause statements") +
+  scale_y_continuous(name = "Effect size", limits = c(-1, 6), breaks = seq(-1, 6, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = es_ci_lower, ymax = es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +  # flip x and y axes
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# prevent statements 
+rev_dir_prevent <- 
+  rev_dir_statements_df %>%
+  filter(relation == "prevent") %>%
+  transform(statement = reorder(statement, es))  # sort by es
+
+rev_dir_prevent_plot <- 
+  ggplot(rev_dir_prevent, 
+         aes(x = statement, y = es)) +
+  theme_minimal() +
+  xlab("Prevent statements") +
+  scale_y_continuous(name = "Effect size", limits = c(-1, 6), breaks = seq(-1, 6, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = es_ci_lower, ymax = es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +  # flip x and y axes
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# combine plots
+rel_dir_plot <- plot_grid(rev_dir_cause_plot, rev_dir_prevent_plot, ncol = 1, nrow = 2, align = 'v')
+
+# save
+ggsave("irreversibility and unidirectionality.pdf",
+       path = "../plots/",
+       device = "pdf",
+       plot = rel_dir_plot,
+       width = 15,
+       height = 100,
+       units = "cm")
+
+
+# irreversibility and unidirectionality - es diff per stimulus group -----------
+
+
+# assign colors
+rev_dir_diff_statements_df <- 
+  rev_dir_diff_statements_df %>%
+  rowwise %>%
+  mutate(sig_test = as.factor(ifelse(diff_es_ci_lower > 0, "significant", "nonsignificant")))
+
+names(my_colors) <- levels(rev_dir_diff_statements_df$sig_test)
+my_scale_color <- scale_colour_manual(name = "sig_test", values = my_colors)
+
+# cause statements
+rev_dir_cause_diff <- 
+  rev_dir_diff_statements_df %>%
+  filter(relation == "cause") %>%
+  transform(statement = reorder(statement, diff_es))  # sort by es
+
+rev_dir_cause_diff_plot <-
+  ggplot(rev_dir_cause_diff, 
+         aes(x = statement, 
+             y = diff_es)) +
+  theme_minimal() +
+  xlab("Cause statements") +
+  scale_y_continuous(name = "Effect size difference scores", limits = c(-3, 3.5), breaks = seq(-3, 3, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = diff_es_ci_lower, ymax = diff_es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +  # flip x and y axes
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# prevent statements 
+rev_dir_prevent_diff <- 
+  rev_dir_diff_statements_df %>%
+  filter(relation == "prevent") %>%
+  transform(statement = reorder(statement, diff_es))  # sort by es
+
+rev_dir_prevent_diff_plot <- 
+  ggplot(rev_dir_prevent_diff, 
+         aes(x = statement, 
+             y = diff_es)) +
+  theme_minimal() +
+  xlab("Prevent statements") +
+  scale_y_continuous(name = "Effect size difference scores", limits = c(-3, 3.5), breaks = seq(-3, 3, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = diff_es_ci_lower, ymax = diff_es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# combine plots
+rel_dir_diff_plot <- plot_grid(rev_dir_cause_diff_plot, rev_dir_prevent_diff_plot, ncol = 1, nrow = 2, align = 'v')
+
+# save
+ggsave("irreversibility and unidirectionality - highest difference per stimulus group.pdf",
+       path = "../plots/",
+       device = "pdf",
+       plot = rel_dir_diff_plot,
+       width = 15,
+       height = 25,
+       units = "cm")
+
+
+# irreversibility of statements ---------------------------------------------
+
+
+# assign colors
+rev_statements_df <- 
+  rev_statements_df %>%
+  rowwise %>%
+  mutate(sig_test = as.factor(ifelse(es_ci_lower > 0, "significant", "nonsignificant")))
+
+names(my_colors) <- levels(rev_statements_df$sig_test)
+my_scale_color <- scale_colour_manual(name = "sig_test", values = my_colors)
+
+# cause statements
+rev_cause <- 
+  rev_statements_df %>%
+  filter(relation == "cause") %>%
+  transform(statement = reorder(statement, es))  # sort by es
+
+rev_cause_plot <- 
+  ggplot(rev_cause, 
+         aes(x = statement, y = es)) +
+  theme_minimal() +
+  xlab("Cause statements") +
+  scale_y_continuous(name = "Effect size", limits = c(-1, 7.5), breaks = seq(-1, 7, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = es_ci_lower, ymax = es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +  # flip x and y axes
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# prevent statements 
+rev_prevent <- 
+  rev_statements_df %>%
+  filter(relation == "prevent") %>%
+  transform(statement = reorder(statement, es))  # sort by es
+
+rev_prevent_plot <- 
+  ggplot(rev_prevent, 
+         aes(x = statement, y = es)) +
+  theme_minimal() +
+  xlab("Prevent statements") +
+  scale_y_continuous(name = "Effect size", limits = c(-1, 7.5), breaks = seq(-1, 7, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = es_ci_lower, ymax = es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +  # flip x and y axes
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# combine plots
+# n statements is not equal in both plots, so the relative heights of the two plots must be adjusted proportionately
+n_cause    <- rev_cause %>% nrow() %>% as.numeric()
+n_prevent  <- rev_prevent %>% nrow() %>% as.numeric()
+
+rev_plot <-
+  plot_grid(rev_cause_plot, 
+            rev_prevent_plot, 
+            ncol = 1, 
+            nrow = 2,
+            align = 'v',
+            rel_heights = c(n_cause, n_prevent))
+
+# save
+ggsave("irreversibility.pdf",
+       path = "../plots/",
+       device = "pdf",
+       plot = rev_plot,
+       width = 15,
+       height = 50,
+       units = "cm")
+
+
+# unidirectionality of statements --------------------------------------------
+
+
+# assign colors
+dir_statements_df <- 
+  dir_statements_df %>%
+  rowwise %>%
+  mutate(sig_test = as.factor(ifelse(es_ci_lower > 0, "significant", "nonsignificant")))
+
+names(my_colors) <- levels(dir_statements_df$sig_test)
+my_scale_color <- scale_colour_manual(name = "sig_test", values = my_colors)
+
+# cause statements
+dir_cause <- 
+  dir_statements_df %>%
+  filter(relation == "cause") %>%
+  transform(statement = reorder(statement, es))  # sort by es
+
+dir_cause_plot <- 
+  ggplot(dir_cause, 
+         aes(x = statement, y = es)) +
+  theme_minimal() +
+  xlab("Cause statements") +
+  scale_y_continuous(name = "Effect size", limits = c(-1, 6), breaks = seq(-1, 6, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = es_ci_lower, ymax = es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +  # flip x and y axes
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# prevent statements 
+dir_prevent <- 
+  dir_statements_df %>%
+  filter(relation == "prevent") %>%
+  transform(statement = reorder(statement, es))  # sort by es
+
+dir_prevent_plot <- 
+  ggplot(dir_prevent, 
+         aes(x = statement, y = es)) +
+  theme_minimal() +
+  xlab("Prevent statements") +
+  scale_y_continuous(name = "Effect size", limits = c(-1, 6), breaks = seq(-1, 6, 1), minor_breaks = NULL) +
+  geom_errorbar(aes(ymin = es_ci_lower, ymax = es_ci_upper)) + # error bars are 99% CIs
+  geom_point(size = 2, 
+             shape = 15,
+             aes(color = sig_test)) +
+  geom_hline(yintercept = 0, linetype = 2) +
+  coord_flip() +  # flip x and y axes
+  my_scale_color +  # add my colors for the sig test factors
+  theme(legend.position="none")  # suppress legend
+
+# combine plots
+dir_plot <- plot_grid(dir_cause_plot, dir_prevent_plot, ncol = 1, nrow = 2, align = 'v')
+
+# save
+ggsave("unidirectionality.pdf",
+       path = "../plots/",
+       device = "pdf",
+       plot = dir_plot,
+       width = 15,
+       height = 50,
+       units = "cm")
+```

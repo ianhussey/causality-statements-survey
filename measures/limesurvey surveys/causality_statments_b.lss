@@ -1,0 +1,2627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+ <LimeSurveyDocType>Survey</LimeSurveyDocType>
+ <DBVersion>164</DBVersion>
+ <languages>
+  <language>en</language>
+ </languages>
+ <answers>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>code</fieldname>
+   <fieldname>answer</fieldname>
+   <fieldname>sortorder</fieldname>
+   <fieldname>assessment_value</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>scale_id</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <code><![CDATA[1]]></code>
+    <answer><![CDATA[Strongly disagree]]></answer>
+    <sortorder><![CDATA[1]]></sortorder>
+    <assessment_value><![CDATA[1]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <code><![CDATA[2]]></code>
+    <answer><![CDATA[Somewhat disagree]]></answer>
+    <sortorder><![CDATA[2]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <code><![CDATA[3]]></code>
+    <answer><![CDATA[Neither agree nor disagree]]></answer>
+    <sortorder><![CDATA[3]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <code><![CDATA[4]]></code>
+    <answer><![CDATA[Somewhat agree]]></answer>
+    <sortorder><![CDATA[4]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <code><![CDATA[5]]></code>
+    <answer><![CDATA[Strongly agree]]></answer>
+    <sortorder><![CDATA[5]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[20341]]></qid>
+    <code><![CDATA[f]]></code>
+    <answer><![CDATA[Female]]></answer>
+    <sortorder><![CDATA[1]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[20341]]></qid>
+    <code><![CDATA[m]]></code>
+    <answer><![CDATA[Male]]></answer>
+    <sortorder><![CDATA[2]]></sortorder>
+    <assessment_value><![CDATA[1]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[20341]]></qid>
+    <code><![CDATA[nb]]></code>
+    <answer><![CDATA[Non binary]]></answer>
+    <sortorder><![CDATA[3]]></sortorder>
+    <assessment_value><![CDATA[1]]></assessment_value>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+  </rows>
+ </answers>
+ <groups>
+  <fields>
+   <fieldname>gid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>group_name</fieldname>
+   <fieldname>group_order</fieldname>
+   <fieldname>description</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>randomization_group</fieldname>
+   <fieldname>grelevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <gid><![CDATA[561]]></gid>
+    <sid><![CDATA[317289]]></sid>
+    <group_name><![CDATA[Statements]]></group_name>
+    <group_order><![CDATA[2]]></group_order>
+    <description><![CDATA[Please respond how much you disagree or agree with each statement.]]></description>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[581]]></gid>
+    <sid><![CDATA[317289]]></sid>
+    <group_name><![CDATA[Demographics]]></group_name>
+    <group_order><![CDATA[1]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[651]]></gid>
+    <sid><![CDATA[317289]]></sid>
+    <group_name><![CDATA[consent]]></group_name>
+    <group_order><![CDATA[0]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+  </rows>
+ </groups>
+ <questions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[F]]></type>
+    <title><![CDATA[statements]]></title>
+    <question/>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[20321]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[581]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[prolificID]]></title>
+    <question><![CDATA[Prolific ID number]]></question>
+    <preg/>
+    <help><![CDATA[NB You must enter this number correctly in order to be paid. It is available in the Prolific.ac tab from which you started this study.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[20331]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[581]]></gid>
+    <type><![CDATA[N]]></type>
+    <title><![CDATA[age]]></title>
+    <question><![CDATA[Age]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[20341]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[581]]></gid>
+    <type><![CDATA[O]]></type>
+    <title><![CDATA[gender]]></title>
+    <question><![CDATA[Gender]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[23091]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[651]]></gid>
+    <type><![CDATA[Y]]></type>
+    <title><![CDATA[consent]]></title>
+    <question><![CDATA[<title></title>
+<h3 style="color:red;">
+	NB please select "open study in a new window" for it to work correctly. </h3>
+<h1>
+	Consent form</h1>
+<h2>
+	Overview</h2>
+<div>
+	The purpose of this study is to examine the strength of causality implied by different statements. You will be asked how much you agree or disagree with a large number of statements, for example "smoking causes cancer".</div>
+<div>
+	Your decision to participate in this research is entirely voluntary. You can withdraw from the study at any time without penalty. If you have any questions or issues with this study please contact the researcher: ian.hussey@ugent.be</div>
+<h2>
+	Requirements</h2>
+<div>
+	Normal or correct-to-normal vision (e.g., wearing glasses or contact lenses).</div>
+<h2>
+	Risks</h2>
+<div>
+	This study involves no known risks to your wellbeing.</div>
+<h2>
+	Compensation</h2>
+<div>
+	You will receive a sum of money for participating, as detailed on the Prolific website. Please note that low quality data (e.g., non-genuine or automated responses) will be checked for via an algorithm. Low quality or incomplete sessions may have payment rejected.</div>
+<h2>
+	Confidentiality and data usage</h2>
+<div>
+	All data will be irrevocably anonymised as soon as data collection is completed. Later deletion of your individual data is therefore not possible. Your data will be aggregated with others, analysed and may be written up as part of an academic manuscript. Your anonymised data may also be made available on a public repository. The purpose and scope of subsequent use of your data is not forseeable.</div>
+<h3>
+	By clicking yes, I acknowledge that I have read and agree to the above, and wish to participate in this study.</h3>
+]]></question>
+    <preg/>
+    <help><![CDATA[<title></title>
+<h2>
+	 </h2>
+]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+  </rows>
+ </questions>
+ <subquestions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[19001]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[129]]></title>
+    <question><![CDATA[admiration prevents complements]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19011]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[130]]></title>
+    <question><![CDATA[trembling causes panic]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19021]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[131]]></title>
+    <question><![CDATA[injury prevents safety]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19031]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[132]]></title>
+    <question><![CDATA[disgust causes arousal]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19041]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[133]]></title>
+    <question><![CDATA[praise prevents self-esteem]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19051]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[134]]></title>
+    <question><![CDATA[violence causes anger]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19061]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[135]]></title>
+    <question><![CDATA[death prevents grief]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[7]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19071]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[136]]></title>
+    <question><![CDATA[safety causes accidents]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[8]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19081]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[137]]></title>
+    <question><![CDATA[joy prevents depression]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[9]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19091]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[138]]></title>
+    <question><![CDATA[lying prevents guilt]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[10]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19101]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[139]]></title>
+    <question><![CDATA[brushing prevents toothaches]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[11]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19111]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[140]]></title>
+    <question><![CDATA[poverty causes jobs]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[12]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19121]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[141]]></title>
+    <question><![CDATA[loneliness prevents socializing]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[13]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19131]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[142]]></title>
+    <question><![CDATA[toothaches causes brushing]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[14]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19141]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[143]]></title>
+    <question><![CDATA[resentment causes divorce]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[15]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19151]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[144]]></title>
+    <question><![CDATA[certainty causes fear]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[16]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19161]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[145]]></title>
+    <question><![CDATA[loneliness prevents isolation]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[17]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19171]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[146]]></title>
+    <question><![CDATA[fire causes damage]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[18]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19181]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[147]]></title>
+    <question><![CDATA[embarrassment causes rejection]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[19]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19191]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[148]]></title>
+    <question><![CDATA[poverty prevents jobs]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[20]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19201]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[149]]></title>
+    <question><![CDATA[cheerfulness causes failure]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[21]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19211]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[150]]></title>
+    <question><![CDATA[homelessness causes poverty]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[22]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19221]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[151]]></title>
+    <question><![CDATA[smiling prevents happiness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[23]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19231]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[152]]></title>
+    <question><![CDATA[beauty prevents attraction]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[24]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19241]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[153]]></title>
+    <question><![CDATA[rejection causes embarrassment]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[25]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19251]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[154]]></title>
+    <question><![CDATA[stress causes preparation]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[26]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19261]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[155]]></title>
+    <question><![CDATA[anger prevents violence]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[27]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19271]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[156]]></title>
+    <question><![CDATA[cancer causes cigarettes]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[28]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19281]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[157]]></title>
+    <question><![CDATA[friendliness causes jealousy]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[29]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19291]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[158]]></title>
+    <question><![CDATA[pollution causes cars]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[30]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19301]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[159]]></title>
+    <question><![CDATA[conflict causes jealousy]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[31]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19311]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[160]]></title>
+    <question><![CDATA[poverty causes homelessness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[32]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19321]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[161]]></title>
+    <question><![CDATA[weight-loss prevents overeating]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[33]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19331]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[162]]></title>
+    <question><![CDATA[harmony prevents conflict]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[34]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19341]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[163]]></title>
+    <question><![CDATA[anger prevents intimacy]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[35]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19351]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[164]]></title>
+    <question><![CDATA[uncertainty causes worry]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[36]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19361]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[165]]></title>
+    <question><![CDATA[failure prevents cheerfulness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[37]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19371]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[166]]></title>
+    <question><![CDATA[weight-loss causes dieting]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[38]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19381]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[167]]></title>
+    <question><![CDATA[cheerfulness causes depression]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[39]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19391]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[168]]></title>
+    <question><![CDATA[self-esteem causes praise]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[40]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19401]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[169]]></title>
+    <question><![CDATA[jealousy causes friendliness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[41]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19411]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[170]]></title>
+    <question><![CDATA[friendliness causes conflict]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[42]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19421]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[171]]></title>
+    <question><![CDATA[weight-gain causes dieting]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[43]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19431]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[172]]></title>
+    <question><![CDATA[cigarettes prevents cancer]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[44]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19441]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[173]]></title>
+    <question><![CDATA[deodorant prevents smell]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[45]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19451]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[174]]></title>
+    <question><![CDATA[complements prevents offense]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[46]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19461]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[175]]></title>
+    <question><![CDATA[conflict prevents agreement]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[47]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19471]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[176]]></title>
+    <question><![CDATA[embarrassment prevents rejection]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[48]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19481]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[177]]></title>
+    <question><![CDATA[overeating causes weight-loss]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[49]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19491]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[178]]></title>
+    <question><![CDATA[homelessness causes jobs]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[50]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19501]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[179]]></title>
+    <question><![CDATA[pollution causes recycling]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[51]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19511]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[180]]></title>
+    <question><![CDATA[complements prevents admiration]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[52]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19521]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[181]]></title>
+    <question><![CDATA[crying causes grief]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[53]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19531]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[182]]></title>
+    <question><![CDATA[heart-disease prevents cholesterol]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[54]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19541]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[183]]></title>
+    <question><![CDATA[laws causes crime]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[55]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19551]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[184]]></title>
+    <question><![CDATA[divorce causes resentment]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[56]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19561]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[185]]></title>
+    <question><![CDATA[happiness causes smiling]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[57]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19571]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[186]]></title>
+    <question><![CDATA[overeating prevents weight-loss]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[58]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19581]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[187]]></title>
+    <question><![CDATA[friendliness prevents conflict]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[59]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19591]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[188]]></title>
+    <question><![CDATA[laughter causes jokes]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[60]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19601]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[189]]></title>
+    <question><![CDATA[death causes grief]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[61]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19611]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[190]]></title>
+    <question><![CDATA[arousal prevents disgust]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[62]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19621]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[191]]></title>
+    <question><![CDATA[pollution prevents cars]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[63]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19631]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[192]]></title>
+    <question><![CDATA[neglect causes sadness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[64]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19641]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[193]]></title>
+    <question><![CDATA[recycling prevents pollution]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[65]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19651]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[194]]></title>
+    <question><![CDATA[cancer prevents death]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[66]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19661]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[195]]></title>
+    <question><![CDATA[damage prevents fire]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[67]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19671]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[196]]></title>
+    <question><![CDATA[neglect prevents sadness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[68]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19681]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[197]]></title>
+    <question><![CDATA[insults prevents offense]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[69]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19691]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[198]]></title>
+    <question><![CDATA[certainty causes worry]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[70]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19701]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[199]]></title>
+    <question><![CDATA[deodorant causes smell]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[71]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19711]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[200]]></title>
+    <question><![CDATA[recycling causes pollution]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[72]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19721]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[201]]></title>
+    <question><![CDATA[sadness causes neglect]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[73]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19731]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[202]]></title>
+    <question><![CDATA[disgust prevents arousal]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[74]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19741]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[203]]></title>
+    <question><![CDATA[isolation causes loneliness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[75]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19751]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[204]]></title>
+    <question><![CDATA[death causes cancer]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[76]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19761]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[205]]></title>
+    <question><![CDATA[jealousy prevents conflict]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[77]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19771]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[206]]></title>
+    <question><![CDATA[conflict causes agreement]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[78]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19781]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[207]]></title>
+    <question><![CDATA[happiness causes regret]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[79]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19791]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[208]]></title>
+    <question><![CDATA[depression prevents suicide]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[80]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19801]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[209]]></title>
+    <question><![CDATA[happiness causes isolation]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[81]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19811]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[210]]></title>
+    <question><![CDATA[agreement causes conflict]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[82]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19821]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[211]]></title>
+    <question><![CDATA[dieting prevents weight-gain]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[83]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19831]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[212]]></title>
+    <question><![CDATA[failure prevents embarrassment]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[84]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19841]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[213]]></title>
+    <question><![CDATA[suicide causes depression]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[85]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19851]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[214]]></title>
+    <question><![CDATA[stress prevents exams]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[86]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19861]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[215]]></title>
+    <question><![CDATA[panic causes smoke]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[87]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19871]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[216]]></title>
+    <question><![CDATA[jealousy prevents friendliness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[88]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19881]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[217]]></title>
+    <question><![CDATA[depression causes cheerfulness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[89]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19891]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[218]]></title>
+    <question><![CDATA[divorce prevents resentment]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[90]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19901]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[219]]></title>
+    <question><![CDATA[resentment prevents divorce]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[91]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19911]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[220]]></title>
+    <question><![CDATA[socializing prevents loneliness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[92]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19921]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[221]]></title>
+    <question><![CDATA[regret prevents happiness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[93]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19931]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[222]]></title>
+    <question><![CDATA[exercise causes heart-disease]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[94]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19941]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[223]]></title>
+    <question><![CDATA[guilt prevents lying]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[95]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19951]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[224]]></title>
+    <question><![CDATA[heart-disease prevents exercise]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[96]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19961]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[225]]></title>
+    <question><![CDATA[certainty prevents worry]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[97]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19971]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[226]]></title>
+    <question><![CDATA[heart-disease causes exercise]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[98]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19981]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[227]]></title>
+    <question><![CDATA[jobs causes homelessness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[99]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[19991]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[228]]></title>
+    <question><![CDATA[failure causes embarrassment]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[100]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20001]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[229]]></title>
+    <question><![CDATA[fear causes certainty]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[101]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20011]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[230]]></title>
+    <question><![CDATA[sleep prevents coffee]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[102]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20021]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[231]]></title>
+    <question><![CDATA[smell causes deodorant]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[103]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20031]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[232]]></title>
+    <question><![CDATA[grief causes crying]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[104]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20041]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[233]]></title>
+    <question><![CDATA[poverty prevents homelessness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[105]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20051]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[234]]></title>
+    <question><![CDATA[sadness prevents neglect]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[106]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20061]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[235]]></title>
+    <question><![CDATA[worry prevents uncertainty]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[107]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20071]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[236]]></title>
+    <question><![CDATA[depression prevents joy]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[108]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20081]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[237]]></title>
+    <question><![CDATA[jokes prevents laughter]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[109]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20091]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[238]]></title>
+    <question><![CDATA[suicide prevents depression]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[110]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20101]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[239]]></title>
+    <question><![CDATA[conflict prevents harmony]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[111]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20111]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[240]]></title>
+    <question><![CDATA[insults causes offense]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[112]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20121]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[241]]></title>
+    <question><![CDATA[toothaches prevents brushing]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[113]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20131]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[242]]></title>
+    <question><![CDATA[isolation prevents happiness]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[114]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20141]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[243]]></title>
+    <question><![CDATA[success causes pride]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[115]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20151]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[244]]></title>
+    <question><![CDATA[pride prevents success]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[116]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20161]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[245]]></title>
+    <question><![CDATA[harmony causes conflict]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[117]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20171]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[246]]></title>
+    <question><![CDATA[safety prevents accidents]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[118]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20181]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[247]]></title>
+    <question><![CDATA[offense prevents insults]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[119]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20191]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[248]]></title>
+    <question><![CDATA[symptoms causes diseases]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[120]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20201]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[249]]></title>
+    <question><![CDATA[loneliness causes isolation]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[121]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20211]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[250]]></title>
+    <question><![CDATA[cholesterol prevents heart-disease]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[122]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20221]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[251]]></title>
+    <question><![CDATA[homelessness prevents jobs]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[123]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20231]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[252]]></title>
+    <question><![CDATA[grief prevents death]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[124]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20241]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[253]]></title>
+    <question><![CDATA[crime prevents laws]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[125]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20251]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[254]]></title>
+    <question><![CDATA[offense causes insults]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[126]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20261]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[255]]></title>
+    <question><![CDATA[complements causes admiration]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[127]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20271]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[256]]></title>
+    <question><![CDATA[pride causes failure]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[128]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20281]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[c1]]></title>
+    <question><![CDATA[please respond somewhat agree]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[129]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20291]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[c2]]></title>
+    <question><![CDATA[please respond somewhat agree]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[130]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20301]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[c3]]></title>
+    <question><![CDATA[please respond somewhat disagree]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[131]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[20311]]></qid>
+    <parent_qid><![CDATA[18961]]></parent_qid>
+    <sid><![CDATA[317289]]></sid>
+    <gid><![CDATA[561]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[c4]]></title>
+    <question><![CDATA[please respond somewhat disagree]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[132]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+  </rows>
+ </subquestions>
+ <question_attributes>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>attribute</fieldname>
+   <fieldname>value</fieldname>
+   <fieldname>language</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <attribute><![CDATA[hide_tip]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <attribute><![CDATA[random_order]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[18961]]></qid>
+    <attribute><![CDATA[repeat_headings]]></attribute>
+    <value><![CDATA[10]]></value>
+   </row>
+  </rows>
+ </question_attributes>
+ <quota>
+  <fields>
+   <fieldname>id</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>name</fieldname>
+   <fieldname>qlimit</fieldname>
+   <fieldname>action</fieldname>
+   <fieldname>active</fieldname>
+   <fieldname>autoload_url</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <id><![CDATA[21]]></id>
+    <sid><![CDATA[317289]]></sid>
+    <name><![CDATA[consent]]></name>
+    <qlimit><![CDATA[0]]></qlimit>
+    <action><![CDATA[2]]></action>
+    <active><![CDATA[1]]></active>
+    <autoload_url><![CDATA[0]]></autoload_url>
+   </row>
+  </rows>
+ </quota>
+ <quota_members>
+  <fields>
+   <fieldname>id</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>qid</fieldname>
+   <fieldname>quota_id</fieldname>
+   <fieldname>code</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <id><![CDATA[31]]></id>
+    <sid><![CDATA[317289]]></sid>
+    <qid><![CDATA[23091]]></qid>
+    <quota_id><![CDATA[21]]></quota_id>
+    <code><![CDATA[N]]></code>
+   </row>
+  </rows>
+ </quota_members>
+ <quota_languagesettings>
+  <fields>
+   <fieldname>quotals_id</fieldname>
+   <fieldname>quotals_quota_id</fieldname>
+   <fieldname>quotals_language</fieldname>
+   <fieldname>quotals_name</fieldname>
+   <fieldname>quotals_message</fieldname>
+   <fieldname>quotals_url</fieldname>
+   <fieldname>quotals_urldescrip</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <quotals_id><![CDATA[21]]></quotals_id>
+    <quotals_quota_id><![CDATA[21]]></quotals_quota_id>
+    <quotals_language><![CDATA[en]]></quotals_language>
+    <quotals_name><![CDATA[consent]]></quotals_name>
+    <quotals_message><![CDATA[As you have chosen not to consent to the conditions, the study will now end. ]]></quotals_message>
+    <quotals_url/>
+    <quotals_urldescrip/>
+   </row>
+  </rows>
+ </quota_languagesettings>
+ <surveys>
+  <fields>
+   <fieldname>sid</fieldname>
+   <fieldname>admin</fieldname>
+   <fieldname>expires</fieldname>
+   <fieldname>startdate</fieldname>
+   <fieldname>adminemail</fieldname>
+   <fieldname>anonymized</fieldname>
+   <fieldname>faxto</fieldname>
+   <fieldname>format</fieldname>
+   <fieldname>savetimings</fieldname>
+   <fieldname>template</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>additional_languages</fieldname>
+   <fieldname>datestamp</fieldname>
+   <fieldname>usecookie</fieldname>
+   <fieldname>allowregister</fieldname>
+   <fieldname>allowsave</fieldname>
+   <fieldname>autonumber_start</fieldname>
+   <fieldname>autoredirect</fieldname>
+   <fieldname>allowprev</fieldname>
+   <fieldname>printanswers</fieldname>
+   <fieldname>ipaddr</fieldname>
+   <fieldname>refurl</fieldname>
+   <fieldname>publicstatistics</fieldname>
+   <fieldname>publicgraphs</fieldname>
+   <fieldname>listpublic</fieldname>
+   <fieldname>htmlemail</fieldname>
+   <fieldname>sendconfirmation</fieldname>
+   <fieldname>tokenanswerspersistence</fieldname>
+   <fieldname>assessments</fieldname>
+   <fieldname>usecaptcha</fieldname>
+   <fieldname>usetokens</fieldname>
+   <fieldname>bounce_email</fieldname>
+   <fieldname>attributedescriptions</fieldname>
+   <fieldname>emailresponseto</fieldname>
+   <fieldname>emailnotificationto</fieldname>
+   <fieldname>tokenlength</fieldname>
+   <fieldname>showxquestions</fieldname>
+   <fieldname>showgroupinfo</fieldname>
+   <fieldname>shownoanswer</fieldname>
+   <fieldname>showqnumcode</fieldname>
+   <fieldname>bouncetime</fieldname>
+   <fieldname>bounceprocessing</fieldname>
+   <fieldname>bounceaccounttype</fieldname>
+   <fieldname>bounceaccounthost</fieldname>
+   <fieldname>bounceaccountpass</fieldname>
+   <fieldname>bounceaccountencryption</fieldname>
+   <fieldname>bounceaccountuser</fieldname>
+   <fieldname>showwelcome</fieldname>
+   <fieldname>showprogress</fieldname>
+   <fieldname>allowjumps</fieldname>
+   <fieldname>navigationdelay</fieldname>
+   <fieldname>nokeyboard</fieldname>
+   <fieldname>alloweditaftercompletion</fieldname>
+   <fieldname>googleanalyticsstyle</fieldname>
+   <fieldname>googleanalyticsapikey</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <sid><![CDATA[317289]]></sid>
+    <admin><![CDATA[Ian Hussey]]></admin>
+    <adminemail><![CDATA[ian.hussey@ugent.be]]></adminemail>
+    <anonymized><![CDATA[Y]]></anonymized>
+    <faxto/>
+    <format><![CDATA[G]]></format>
+    <savetimings><![CDATA[Y]]></savetimings>
+    <template><![CDATA[skeletonquest_noFooter]]></template>
+    <language><![CDATA[en]]></language>
+    <additional_languages/>
+    <datestamp><![CDATA[Y]]></datestamp>
+    <usecookie><![CDATA[N]]></usecookie>
+    <allowregister><![CDATA[N]]></allowregister>
+    <allowsave><![CDATA[N]]></allowsave>
+    <autonumber_start><![CDATA[0]]></autonumber_start>
+    <autoredirect><![CDATA[Y]]></autoredirect>
+    <allowprev><![CDATA[N]]></allowprev>
+    <printanswers><![CDATA[N]]></printanswers>
+    <ipaddr><![CDATA[N]]></ipaddr>
+    <refurl><![CDATA[Y]]></refurl>
+    <publicstatistics><![CDATA[N]]></publicstatistics>
+    <publicgraphs><![CDATA[N]]></publicgraphs>
+    <listpublic><![CDATA[N]]></listpublic>
+    <htmlemail><![CDATA[Y]]></htmlemail>
+    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <tokenanswerspersistence><![CDATA[N]]></tokenanswerspersistence>
+    <assessments><![CDATA[N]]></assessments>
+    <usecaptcha><![CDATA[D]]></usecaptcha>
+    <usetokens><![CDATA[N]]></usetokens>
+    <bounce_email><![CDATA[ian.hussey@ugent.be]]></bounce_email>
+    <attributedescriptions><![CDATA[a:0:{}]]></attributedescriptions>
+    <emailresponseto/>
+    <emailnotificationto/>
+    <tokenlength><![CDATA[15]]></tokenlength>
+    <showxquestions><![CDATA[Y]]></showxquestions>
+    <showgroupinfo><![CDATA[X]]></showgroupinfo>
+    <shownoanswer><![CDATA[N]]></shownoanswer>
+    <showqnumcode><![CDATA[X]]></showqnumcode>
+    <bounceprocessing><![CDATA[N]]></bounceprocessing>
+    <showwelcome><![CDATA[N]]></showwelcome>
+    <showprogress><![CDATA[Y]]></showprogress>
+    <allowjumps><![CDATA[N]]></allowjumps>
+    <navigationdelay><![CDATA[0]]></navigationdelay>
+    <nokeyboard><![CDATA[N]]></nokeyboard>
+    <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
+    <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
+    <googleanalyticsapikey/>
+   </row>
+  </rows>
+ </surveys>
+ <surveys_languagesettings>
+  <fields>
+   <fieldname>surveyls_survey_id</fieldname>
+   <fieldname>surveyls_language</fieldname>
+   <fieldname>surveyls_title</fieldname>
+   <fieldname>surveyls_description</fieldname>
+   <fieldname>surveyls_welcometext</fieldname>
+   <fieldname>surveyls_endtext</fieldname>
+   <fieldname>surveyls_url</fieldname>
+   <fieldname>surveyls_urldescription</fieldname>
+   <fieldname>surveyls_email_invite_subj</fieldname>
+   <fieldname>surveyls_email_invite</fieldname>
+   <fieldname>surveyls_email_remind_subj</fieldname>
+   <fieldname>surveyls_email_remind</fieldname>
+   <fieldname>surveyls_email_register_subj</fieldname>
+   <fieldname>surveyls_email_register</fieldname>
+   <fieldname>surveyls_email_confirm_subj</fieldname>
+   <fieldname>surveyls_email_confirm</fieldname>
+   <fieldname>surveyls_dateformat</fieldname>
+   <fieldname>surveyls_attributecaptions</fieldname>
+   <fieldname>email_admin_notification_subj</fieldname>
+   <fieldname>email_admin_notification</fieldname>
+   <fieldname>email_admin_responses_subj</fieldname>
+   <fieldname>email_admin_responses</fieldname>
+   <fieldname>surveyls_numberformat</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <surveyls_survey_id><![CDATA[317289]]></surveyls_survey_id>
+    <surveyls_language><![CDATA[en]]></surveyls_language>
+    <surveyls_title><![CDATA[Statements about causality - b]]></surveyls_title>
+    <surveyls_description/>
+    <surveyls_welcometext/>
+    <surveyls_endtext/>
+    <surveyls_url/>
+    <surveyls_urldescription><![CDATA[Click here to return to prolific and have your completion code entered automatically]]></surveyls_urldescription>
+    <surveyls_email_invite_subj><![CDATA[Invitation to participate in a survey]]></surveyls_email_invite_subj>
+    <surveyls_email_invite><![CDATA[Dear {FIRSTNAME},
+
+you have been invited to participate in a survey.
+
+The survey is titled:
+"{SURVEYNAME}"
+
+"{SURVEYDESCRIPTION}"
+
+To participate, please click on the link below.
+
+Sincerely,
+
+{ADMINNAME} ({ADMINEMAIL})
+
+----------------------------------------------
+Click here to do the survey:
+{SURVEYURL}
+
+If you do not want to participate in this survey and don't want to receive any more invitations please click the following link:
+{OPTOUTURL}
+
+If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:
+{OPTINURL}]]></surveyls_email_invite>
+    <surveyls_email_remind_subj><![CDATA[Reminder to participate in a survey]]></surveyls_email_remind_subj>
+    <surveyls_email_remind><![CDATA[Dear {FIRSTNAME},
+
+Recently we invited you to participate in a survey.
+
+We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.
+
+The survey is titled:
+"{SURVEYNAME}"
+
+"{SURVEYDESCRIPTION}"
+
+To participate, please click on the link below.
+
+Sincerely,
+
+{ADMINNAME} ({ADMINEMAIL})
+
+----------------------------------------------
+Click here to do the survey:
+{SURVEYURL}
+
+If you do not want to participate in this survey and don't want to receive any more invitations please click the following link:
+{OPTOUTURL}]]></surveyls_email_remind>
+    <surveyls_email_register_subj><![CDATA[Survey registration confirmation]]></surveyls_email_register_subj>
+    <surveyls_email_register><![CDATA[Dear {FIRSTNAME},
+
+You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.
+
+To complete this survey, click on the following URL:
+
+{SURVEYURL}
+
+If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.]]></surveyls_email_register>
+    <surveyls_email_confirm_subj><![CDATA[Confirmation of your participation in our survey]]></surveyls_email_confirm_subj>
+    <surveyls_email_confirm><![CDATA[Dear {FIRSTNAME},
+
+this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.
+
+If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.
+
+Sincerely,
+
+{ADMINNAME}]]></surveyls_email_confirm>
+    <surveyls_dateformat><![CDATA[9]]></surveyls_dateformat>
+    <surveyls_attributecaptions><![CDATA[a:0:{}]]></surveyls_attributecaptions>
+    <email_admin_notification_subj><![CDATA[Response submission for survey {SURVEYNAME}]]></email_admin_notification_subj>
+    <email_admin_notification><![CDATA[Hello,
+
+A new response was submitted for your survey '{SURVEYNAME}'.
+
+Click the following link to reload the survey:
+{RELOADURL}
+
+Click the following link to see the individual response:
+{VIEWRESPONSEURL}
+
+Click the following link to edit the individual response:
+{EDITRESPONSEURL}
+
+View statistics by clicking here:
+{STATISTICSURL}]]></email_admin_notification>
+    <email_admin_responses_subj><![CDATA[Response submission for survey {SURVEYNAME} with results]]></email_admin_responses_subj>
+    <email_admin_responses><![CDATA[Hello,
+
+A new response was submitted for your survey '{SURVEYNAME}'.
+
+Click the following link to reload the survey:
+{RELOADURL}
+
+Click the following link to see the individual response:
+{VIEWRESPONSEURL}
+
+Click the following link to edit the individual response:
+{EDITRESPONSEURL}
+
+View statistics by clicking here:
+{STATISTICSURL}
+
+
+The following answers were given by the participant:
+{ANSWERTABLE}]]></email_admin_responses>
+    <surveyls_numberformat><![CDATA[0]]></surveyls_numberformat>
+   </row>
+  </rows>
+ </surveys_languagesettings>
+</document>

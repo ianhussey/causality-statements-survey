@@ -1,0 +1,104 @@
+```{r}
+# title: get descriptive stats for the best statements and their composite scale
+# author: ian hussey (ian.hussey@ugent.be)
+# license: GPLv3+
+
+
+# dependencies ------------------------------------------------------------
+
+
+library(tidyverse)
+
+
+# get data ----------------------------------------------------------------
+
+
+codebook <- 
+  read.csv("../data/codebooks/codebook screened data.csv") %>%
+  rename(statement = subquestion)
+
+screened_data <- read.csv("../data/screened data/screened data.csv")
+
+processed_data <- read.csv("../data/processed data/irreversibility and unidirectionality - highest difference per stimulus group.csv")
+
+
+
+# processing --------------------------------------------------------------
+
+
+cause_statements <- 
+  processed_data %>%
+  select(statement) %>%
+  filter(grepl("cause", statement)) %>%
+  slice(1:5)  # df is already ordered by effect size and then by relation type, so can just slice the top 5
+
+prevent_statements <- 
+  processed_data %>%
+  select(statement) %>%
+  filter(grepl("prevent", statement)) %>%
+  slice(1:5)  # df is already ordered by effect size and then by relation type, so can just slice the top 5
+
+selected_statements <- rbind(cause_statements, prevent_statements)
+
+find_columns <- 
+  left_join(selected_statements, codebook, by = "statement") %>%
+  select(statement, column) 
+
+
+i <- find_columns$statement
+i
+c("participant",
+  "cigarettes cause cancer",
+  "cars cause pollution",
+  "death causes grief",
+  "exams cause stress",
+  "cholesterol causes heart-disease",
+  "vaccines prevent disease",
+  "coffee prevents sleep",
+  "deodorant prevents smell",
+  "exercise prevents heart-disease",
+  "safety prevents injury")
+
+j <- find_columns$column
+j
+#(statement_103, statement_16, statement_173, statement_189, statement_53, 
+#statement_67, statement_74, statement_79, statement_8, statement_95)
+
+screened_data_subset <- 
+  screened_data %>%
+  select(id, statement_103, statement_16, statement_173, statement_189, statement_53, 
+         statement_67, statement_74, statement_79, statement_8, statement_95)
+
+colnames(screened_data_subset) <- c("participant",
+                                    "cigarettes_cause_cancer",
+                                    "cars_cause_pollution",
+                                    "death_causes_grief",
+                                    "exams_cause_stress",
+                                    "cholesterol_causes_heart_disease",
+                                    "vaccines_prevent_disease",
+                                    "coffee_prevents_sleep",
+                                    "deodorant_prevents_smell",
+                                    "exercise_prevents_heart_disease",
+                                    "safety_prevents_injury")
+
+write.csv(screened_data_subset, "screened_data_subset.csv", row.names = FALSE)
+
+
+
+
+ratings_best_long <- read.csv("ratings_best.csv")
+
+plot(density(ratings_best_long$rating))
+
+m = round(mean(ratings_best_long$rating), 2)
+sd = sd(ratings_best_long$rating)
+n = nrow(ratings_best_long)
+
+ci_lower = round(m - 1.96*sd/sqrt(n), 2)
+ci_upper = round(m + 1.96*sd/sqrt(n), 2)
+output <- paste("(Mean = ", m, ", 95% CI [", ci_lower, ", ", ci_upper, "])", sep = "")
+output
+#[1] "(Mean = 4.5, 95% CI [4.43, 4.57])"
+```
+
+

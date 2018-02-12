@@ -1,0 +1,11 @@
+All graphs:
+1. Error bars = 99% CIs (99 rather than 95 given large number of tests)
+2. Color of points (green vs red) refer to significant vs. non significantly larger than 0 effect sizes (e.g., whether lower bound CI is >0).
+
+"Irreversibility" refers to standardised difference scores (Cohen's d) between ratings of matched pairs of statements where the causal relation is reversed but the order kept static, e.g., "x causes y" vs. "x prevents y". If confidence interval does not include zero, causality between the causal relation is non-reversible along this causal direction.
+
+"Unidirectionality" refers to standardised difference scores (Cohen's d) between ratings of matched pairs of statements where the causal relation is kept static, but the order of the stimuli is reversed, e.g., "x causes y" vs. "y causes x". If confidence interval does not include zero, causality is unidirectional along this causal relation. 
+
+"Irreversibility and unidirectionality" refer to both, i.e., difference scores between ratings of one statement in a group (e.g., "smoking causes cancer" and the pooled ratings of the other three (e.g., "smoking prevents cancer", "cancer causes smoking", and "cancer prevents smoking"). If confidence interval does not include zero, causality of a given statement is both unidirectional and non-reversible. 
+
+"Irreversibility and unidirectionality - highest difference per stimulus group". Following from the above, for each group of four statements, a difference score was calculated between the statement with the largest ES and the sum of the other three ESs. The confidence interval refers to the 99% CI on the highest CI only, and the zero score therefore represents the sum of the other three ES. This value therefore represents the most non-reversible and unidirectional statement in each group, and allows one to rank these statements for their relative non-reversibility and uni-directionality. If confidence interval does not include zero and effect size is positive, the statement's causality is both unidirectional and non-reversible, and is superior to the sum of the other three statements in the stimulus group. 
