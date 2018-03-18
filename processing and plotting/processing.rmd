@@ -174,10 +174,10 @@ ratings_means_sds_df %>% write.csv("../data/processed data/means and SDs.csv", r
 rev_and_dir_es_df <-
   ratings_means_sds_df %>%
   rowwise() %>%
-  mutate(not_x_causes_y_mean   = mean(c(x_prevents_y_sd, y_causes_x_sd, y_prevents_x_sd)),  # mean of control statements
-         not_x_prevents_y_mean = mean(c(x_causes_y_sd, y_causes_x_sd, y_prevents_x_sd)),
-         not_y_causes_x_mean   = mean(c(x_prevents_y_sd, x_causes_y_sd, y_prevents_x_sd)),
-         not_y_prevents_x_mean = mean(c(x_prevents_y_sd, y_causes_x_sd, x_causes_y_sd)),
+  mutate(not_x_causes_y_mean   = mean(c(x_prevents_y_mean, y_causes_x_mean, y_prevents_x_mean)),  # mean of control statements
+         not_x_prevents_y_mean = mean(c(x_causes_y_mean, y_causes_x_mean, y_prevents_x_mean)),
+         not_y_causes_x_mean   = mean(c(x_prevents_y_mean, x_causes_y_mean, y_prevents_x_mean)),
+         not_y_prevents_x_mean = mean(c(x_prevents_y_mean, y_causes_x_mean, x_causes_y_mean)),
          
          not_x_causes_y_sd   = sqrt( ( x_prevents_y_sd*(n-1) + y_causes_x_sd*(n-1) + y_prevents_x_sd*(n-1) ) / (n*3 - 3) ),  # combed sd of control statements
          not_x_prevents_y_sd = sqrt( ( x_causes_y_sd*(n-1)   + y_causes_x_sd*(n-1) + y_prevents_x_sd*(n-1) ) / (n*3 - 3) ),

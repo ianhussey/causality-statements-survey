@@ -92,7 +92,7 @@ rel_dir_plot <- plot_grid(rev_dir_cause_plot, rev_dir_prevent_plot, ncol = 1, nr
 
 # save
 ggsave("irreversibility and unidirectionality.pdf",
-       path = "../plots/",
+       path = "../analysis",
        device = "pdf",
        plot = rel_dir_plot,
        width = 15,
@@ -161,7 +161,7 @@ rel_dir_diff_plot <- plot_grid(rev_dir_cause_diff_plot, rev_dir_prevent_diff_plo
 
 # save
 ggsave("irreversibility and unidirectionality - highest difference per stimulus group.pdf",
-       path = "../plots/",
+       path = "../analysis",
        device = "pdf",
        plot = rel_dir_diff_plot,
        width = 15,
@@ -238,7 +238,7 @@ rev_plot <-
 
 # save
 ggsave("irreversibility.pdf",
-       path = "../plots/",
+       path = "../analysis",
        device = "pdf",
        plot = rev_plot,
        width = 15,
@@ -305,7 +305,7 @@ dir_plot <- plot_grid(dir_cause_plot, dir_prevent_plot, ncol = 1, nrow = 2, alig
 
 # save
 ggsave("unidirectionality.pdf",
-       path = "../plots/",
+       path = "../analysis",
        device = "pdf",
        plot = dir_plot,
        width = 15,
